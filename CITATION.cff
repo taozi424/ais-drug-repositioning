@@ -10,15 +10,12 @@ version: 1.0.0
 date-released: 2026-11-13
 license: MIT
 
-# TODO: 替换为实际作者信息（GitHub 公开仓库中不要留占位内容）
 authors:
-  - name: "AIS Drug Repositioning Project"
-    # family-names: "Zhang"
-    # given-names: "San"
-    # orcid: "https://orcid.org/0000-0000-0000-0000"
+  - name: "taozi424"
+    alias: "taozi424"
+    website: "https://github.com/taozi424"
 
-# TODO: 推送后填入实际仓库地址
-repository-code: "https://github.com/<account>/<repo>"
+repository-code: "https://github.com/taozi424/ais-drug-repositioning"
 
 keywords:
   - drug repositioning
