@@ -86,7 +86,7 @@ FDR<0.05 的共同 landmark 基因中按 |t| 各取至多 100 个：
 | `signature/AIS_signature_config.yaml` | 冻结的队列、模型、注释版本、阈值与敏感性预设 |
 | `results/tables/GSEA_*.csv`、`ORA_*.csv` | 通路结果（GO BP + KEGG，含代谢/免疫焦点表） |
 | `results/tables/cell_composition_diagnostic.csv` | 细胞组成诊断 |
-| `results/figures/AIS_volcano.png` 等 | 火山图、签名得分、GSEA Top20、组成相关图 |
+| `results/figures_v2/AIS_volcano.png` 等 | 火山图、签名得分、GSEA Top20、组成相关图 |
 | `scripts/04_ais_signature.R`、`05_pathway_composition.R` | 全部代码（可复跑） |
 
 ## 9. 下一步

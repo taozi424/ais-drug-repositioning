@@ -24,7 +24,7 @@
 
 ## 2. 五基因方向表
 
-图：`results/figures/fig_five_gene_heatmap.png`（行=184 个候选按最终排名，列=五基因；红=与 AIS 方向相反，蓝=同向，灰=该条件下无证据）。
+图：`results/figures_v2/fig_five_gene_heatmap.png`（行=184 个候选按最终排名，列=五基因；红=与 AIS 方向相反，蓝=同向，灰=该条件下无证据）。
 
 数据：`results/tables/five_gene_direction_detail.csv`（条件级，含细胞/剂量/时间与证据类型）、`five_gene_direction_summary.csv`（候选×基因汇总）。
 

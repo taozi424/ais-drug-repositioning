@@ -290,7 +290,7 @@ git push -u origin main
 - `CITATION.cff` 的 `family-names` / `given-names` / `repository-code`
 - 若课程要求匿名评审，把这三处改成课程编号或删除 `CITATION.cff`
 
-仓库体积约 45 MB（主要是 `results/tables/pathway_drug_candidates.csv` 28 MB
-与 18 张 300 dpi 图）。若想更小，可在 `.gitignore` 里加
+仓库压缩后约 18 MB（工作区约 45 MB，主要是 28 MB 的
+`results/tables/pathway_drug_candidates.csv` 与 18 张 300 dpi 图）。若想更小，可在 `.gitignore` 里加
 `results/tables/pathway_drug_candidates.csv`，结论不受影响——该表的汇总结果已由
 `pathway_agreement_summary.csv` 与 `docs/07` 承载。

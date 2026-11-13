@@ -65,7 +65,7 @@
 
 - **GSE58294 重复测量一致性**：同一患者跨 3 时点 69 对样本相关中位 **0.981**，不同受试者 0.970 —— subject_id 映射正确，重复测量结构成立（`results/qc/GSE58294_repeat_concordance.csv`）。
 - **PCA**：GSE16561 病例/对照在前两主成分上混合（差异信号弱于技术分散，属正常，差异分析在低维之外进行）；GSE58294 对照组在 PC2 上与卒中患者清晰分离，23 例 CES 三个时点呈轨迹分布；GSE22255 分组混合。无样本孤立于主群。
-- 图：`results/figures/` 下每队列 boxplot / density / PCA / 样本相关热图；逐样本指标见 `results/qc/qc_per_sample.csv`。
+- 图：`results/figures_v2/` 下每队列 boxplot / density / PCA / 样本相关热图；逐样本指标见 `results/qc/qc_per_sample.csv`。
 
 ## 6. 既有资产审计（本阶段复核结论）
 
@@ -95,6 +95,6 @@ results/tables/probe_to_gene_map.csv.gz  探针→基因溯源（含保留标记
 results/qc/qc_per_sample.csv             逐样本质控指标与标记
 results/qc/preprocessing_summary.csv     预处理决策汇总
 results/qc/GSE58294_repeat_concordance.csv 重复测量一致性
-results/figures/*.png                    boxplot/密度/PCA/相关热图
+results/figures_v2/*.png                    boxplot/密度/PCA/相关热图
 scripts/01–03                            解析、样本表、预处理与质控脚本
 ```
