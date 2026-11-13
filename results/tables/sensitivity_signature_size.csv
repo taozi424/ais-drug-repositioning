@@ -1,0 +1,4 @@
+variant,n_up,n_dn,rho_vs_base,top20_overlap,overlap_Rpositive_with_184,n_R_positive
+top50_per_direction,50,50,0.339539927645593,1,136,1010
+top100_per_direction,100,100,0.515388398937913,1,137,840
+top150_per_direction,150,150,0.684564987288964,4,139,695

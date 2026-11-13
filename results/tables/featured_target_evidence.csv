@@ -1,0 +1,8 @@
+iname,chembl_id,moa,action_type,target_chembl_id,source,checked,note
+enoxacin,CHEMBL826,Topoisomerase IV inhibitor,INHIBITOR,CHEMBL2363077,"ChEMBL mechanism.json (curated, 含文献)",2026-11-10,
+enoxacin,CHEMBL826,DNA gyrase inhibitor,INHIBITOR,CHEMBL2311244,"ChEMBL mechanism.json (curated, 含文献)",2026-11-10,
+dosulepin,CHEMBL1492500,Norepinephrine transporter inhibitor,INHIBITOR,CHEMBL222,"ChEMBL mechanism.json (curated, 含文献)",2026-11-10,
+dosulepin,CHEMBL1492500,Serotonin transporter inhibitor,INHIBITOR,CHEMBL228,"ChEMBL mechanism.json (curated, 含文献)",2026-11-10,
+diethylstilbestrol,CHEMBL411,Estrogen receptor alpha agonist,AGONIST,CHEMBL206,"ChEMBL mechanism.json (curated, 含文献)",2026-11-10,
+metoprolol,CHEMBL13,,,,ChEMBL mechanism.json,2026-11-10,ChEMBL 无 curated MOA 记录
+riluzole,CHEMBL744,Sodium channel alpha subunit blocker,BLOCKER,CHEMBL2331043,"ChEMBL mechanism.json (curated, 含文献)",2026-11-10,

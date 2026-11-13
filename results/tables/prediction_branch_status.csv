@@ -1,0 +1,2 @@
+branch,gate_rule,gate_passed,n_candidates,reason,note
+predicted_only_supplement,AI 主指标(药物等权 Spearman) > 条件均值 且 相对岭回归差值 95%CI 下限 > 0,FALSE,0,"门槛未通过 -> 不启用'为缺少实验特征的化合物补充预测'; 最终排名仅基于实测 L1000 证据, 不报告纯预测候选。","未对缺少实验特征的化合物补充预测; 实测候选与纯预测候选分开报告, 不因分数相近视为证据等价"

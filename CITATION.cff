@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this code or the analysis design, please cite it as below."
+title: "AIS 药物重定位：冻结规则下的疾病签名—扰动图谱分析流水线"
+abstract: >-
+  从 GSE16561 全血转录组构建急性缺血性卒中疾病表达签名，在 L1000/LINCS 化学扰动图谱中
+  检索表达方向相反的化合物，并以患者级重采样、外部队列重算与通路层检验评估排名的稳定性。
+  核心结论为负面：签名方向稳定但基因名单不稳定，候选排名位次漂移明显，外部队列不复现。
+type: software
+version: 1.0.0
+date-released: 2026-11-13
+license: MIT
+
+# TODO: 替换为实际作者信息（GitHub 公开仓库中不要留占位内容）
+authors:
+  - name: "AIS Drug Repositioning Project"
+    # family-names: "Zhang"
+    # given-names: "San"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+
+# TODO: 推送后填入实际仓库地址
+repository-code: "https://github.com/<account>/<repo>"
+
+keywords:
+  - drug repositioning
+  - ischemic stroke
+  - transcriptomics
+  - LINCS L1000
+  - connectivity map
+  - reproducibility
+
+references:
+  - type: dataset
+    title: "GSE16561: Whole blood gene expression in acute ischaemic stroke"
+    authors:
+      - name: "NCBI Gene Expression Omnibus"
+    repository: "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE16561"
+  - type: dataset
+    title: "GSE58294: Gene expression in peripheral immune cells following cardioembolic stroke"
+    authors:
+      - name: "NCBI Gene Expression Omnibus"
+    repository: "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE58294"
+  - type: dataset
+    title: "GSE70138: LINCS L1000 Level 5 COMPZ (CMAP02)"
+    authors:
+      - name: "NCBI Gene Expression Omnibus"
+    repository: "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE70138"

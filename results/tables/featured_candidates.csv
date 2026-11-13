@@ -1,0 +1,6 @@
+parent_key,iname,R_median,n_cells,cell_consistent_pct,max_phase,evidence_tier,rank_overall,R_gt0_frac,rank_med,rank_p2.5,rank_p97.5,pct_le3h
+IDYZIJYBMGIQMJ,enoxacin,0.143517551906045,6,33,4,B_partial_panel,8,0.864,359.5,48.975,1163.35,
+PHTUQLWOUWZIMZ,dosulepin,0.140178723256173,5,100,4,B_partial_panel,10,0.756,402.5,24,1524.425,
+RGLYKWWBQGJZGM,diethylstilbestrol,0.130570092165986,5,20,4,B_partial_panel,17,0.893,280.5,14,1097.125,
+IUBSYMUCCVWXPE,metoprolol,0.128399878164412,5,60,4,B_partial_panel,19,0.884,286,7,1122.075,
+FTALBRSUTCGOEG,riluzole,0.12121680884049,5,60,4,B_partial_panel,22,0.783,440.5,35,1366.275,

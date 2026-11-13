@@ -1,0 +1,7 @@
+module,n_markers,median_AIS,median_Control,p_group,rho_with_signature
+Neutrophil,9,0.25,-0.475,8.56e-07,0.786
+T_cell,8,-0.317,0.738,1.5e-09,-0.858
+B_cell,7,-0.267,0.388,2.77e-05,-0.665
+Monocyte,6,0.284,-0.459,2.09e-07,0.768
+NK_cell,5,-0.247,0.186,0.0584,-0.283
+Platelet,4,0.315,-0.375,0.00258,0.613

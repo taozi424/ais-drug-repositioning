@@ -1,0 +1,7 @@
+variant,n_up,n_down,overlap,jaccard
+top50_by_t,50,50,100,0.541
+top50_by_logFC,50,50,93,0.484
+top150_by_t,150,85,185,0.787
+top150_by_logFC,150,85,185,0.787
+unadjusted_model,100,100,144,0.598
+full_common_space,153,85,185,0.777

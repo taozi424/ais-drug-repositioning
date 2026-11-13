@@ -1,0 +1,63 @@
+{
+ "model_notes": {
+  "ridge": "Ridge(alpha=100.0, solver=cholesky), Morgan r=2/2048bit",
+  "deepce": "未训练完成: 8 核 CPU/8GB 实测 0.61-4.07 s/步(batch 8-32), 19-32 min/轮, 9 步后 RSS 4.8GB 被系统终止; 无权重, 不参与比较"
+ },
+ "per_model": {
+  "cond_mean": {
+   "rho_drug_weighted": 0.0917,
+   "rmse": 1.2544,
+   "up_recovery": 0.6589,
+   "down_recovery": 0.5766,
+   "undefined_frac": 0.0,
+   "n_conditions": 3399
+  },
+  "ridge": {
+   "rho_drug_weighted": 0.1078,
+   "rmse": 1.2857,
+   "up_recovery": 0.6307,
+   "down_recovery": 0.5796,
+   "undefined_frac": 0.0,
+   "n_conditions": 3399
+  }
+ },
+ "bootstrap": [
+  {
+   "comparison": "cond_mean-ridge",
+   "mean_diff": -0.0163,
+   "ci_low": -0.0364,
+   "ci_high": 0.003,
+   "prop_gt0": 0.054
+  }
+ ],
+ "ais_ranking": [
+  {
+   "model": "cond_mean",
+   "n_drugs": 132,
+   "rank_spearman": -0.0399,
+   "top20_overlap": 6,
+   "median_R_measured": -0.0587,
+   "median_R_predicted": -0.2279
+  },
+  {
+   "model": "ridge",
+   "n_drugs": 132,
+   "rank_spearman": 0.2211,
+   "top20_overlap": 3,
+   "median_R_measured": -0.0587,
+   "median_R_predicted": -0.2026
+  }
+ ],
+ "gate": {
+  "criterion": "AI 主指标(药物等权 Spearman) > 条件均值 且 相对岭回归差值 95%CI 下限 > 0",
+  "ai_available": false,
+  "passed": false,
+  "reason": "DeepCE 未完成训练, 无 AI 主指标; 唯一可评估的结构模型(岭回归)在 dev 上低于条件均值(0.1127 vs 0.1146), 测试集点估计虽略高(0.1078 vs 0.0917),但配对差值 95%CI 下限为负, 且两集方向相反, 不能判为稳定优于条件均值。",
+  "consequence": "门槛未通过 -> 不启用'为缺少实验特征的化合物补充预测'; 最终排名仅基于实测 L1000 证据, 不报告纯预测候选。"
+ },
+ "n_test_conditions": 3399,
+ "n_test_drugs": 180,
+ "n_common_drugs": 180,
+ "rng_seed": 20261109,
+ "n_bootstrap": 1000
+}

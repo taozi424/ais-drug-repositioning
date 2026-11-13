@@ -1,0 +1,56 @@
+pert_id,pert_iname,max_phase,first_approval,matched_by
+BRD-K97118047,"4,5,6,7-tetrabromobenzotriazole","",,inchi_key_full
+BRD-K67860401,AR-A014418,"",,inchi_key_full
+BRD-K26863634,BIX-01338,"",,inchi_key_full
+BRD-K73261812,BRD-K73261812,"",,inchi_key_full
+BRD-K76969307,CG-930,"",,inchi_key_full
+BRD-A98990573,epinastine,4.0,2003,inchi_key_full
+BRD-K56844688,epirubicin,4.0,1999,pref_name_normalized
+BRD-K57754230,EPZ-005687,"",,inchi_key_full
+BRD-K70301876,escitalopram,4.0,2002,inchi_key_full
+BRD-K65716359,exifone,4.0,,inchi_key_full
+BRD-K99383816,ftorafur,"",,inchi_key_full
+BRD-K06692906,Gossypetin,"",,inchi_key_full
+BRD-K93023739,IKK-inhibitor-X,"",,inchi_key_full
+BRD-K93255255,indoximod,2.0,,inchi_key_full
+BRD-K93468883,IPI-145,4.0,2018,inchi_key_full
+BRD-K54606188,JQ1-(+),"",,inchi_key_full
+BRD-A97739905,ketoprofen,4.0,1986,inchi_key_full
+BRD-A81177136,KN-62,"",,inchi_key_full
+BRD-K93480852,KN-93,"",,inchi_key_full
+BRD-K27305650,LY-294002,-1.0,,inchi_key_full
+BRD-A14886633,norgestrel,4.0,1968,pref_name_normalized
+BRD-A24228527,ofloxacin,4.0,1990,inchi_key_full
+BRD-K99092662,PS-178990,"",,inchi_key_full
+BRD-K99257182,quinine,4.0,2005,pref_name_normalized
+BRD-K89348303,ramipril,4.0,1991,inchi_key_full
+BRD-K61688984,RGFP-966,"",,inchi_key_full
+BRD-K19601669,S-ruxolitinib,"",,inchi_key_full
+BRD-A67788537,salermide,"",,inchi_key_full
+BRD-A89164055,sorbinil,3.0,,pref_name_normalized
+BRD-K17953061,staurosporine,"",,inchi_key_full
+BRD-K64634304,tretinoin,4.0,1971,pref_name_normalized
+BRD-A19037878,trichostatin-a,"",,inchi_key_full
+BRD-K88366685,trimetazidine,4.0,,inchi_key_full
+BRD-K74236984,UNC-0321,"",,inchi_key_full
+BRD-K87300616,ursodiol,4.0,1987,pref_name_normalized
+BRD-K04701033,VE-822,2.0,,inchi_key_full
+BRD-M45964048,verteporfin,4.0,2000,pref_name_normalized
+BRD-K72093121,vidarabine,4.0,1976,inchi_key_full
+BRD-U60236422,WH-4-025,0_or_research,,none
+BRD-A13254067,okadaic acid,0_or_research,,none
+BRD-A14634327,gsk126,"",,inchi_key_full
+BRD-A18705706,zebularine,"",,inchi_key_full
+BRD-A36536537,sch 900776,"",,inchi_key_full
+BRD-A48881734,cpi-169,"",,inchi_key_full
+BRD-A55453956,compound e,"",,inchi_key_full
+BRD-A65730376,epz004777,0_or_research,,none
+BRD-A69563582,epz-5676,0_or_research,,none
+BRD-A72575012,calpain inhibitor ii,0_or_research,,none
+BRD-K29343434,bms-906024,2.0,,inchi_key_full
+BRD-K31406481,vu0155056,"",,inchi_key_full
+BRD-K86787118,bafilomycin a1,0_or_research,,none
+BRD-K87465484,unc-0646,"",,inchi_key_full
+BRD-K90860366,1271738-62-5,"",,inchi_key_full
+BRD-K92123432,ginkgetin,"",,inchi_key_full
+BRD-K92960067,smer-3,"",,inchi_key_full

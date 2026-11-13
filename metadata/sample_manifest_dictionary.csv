@@ -1,0 +1,17 @@
+field,definition
+sample_id,GEO 样本登录号 (GSM*)
+subject_id,受试者编号；同一受试者多次采样共享同一编号
+cohort,GEO 系列号
+disease_group,AIS = 急性缺血性卒中；Control = 对照
+stroke_subtype,卒中亚型；未报告则为 unknown
+onset_to_draw_h,发病至首次采血时间（小时）；<3 表示不足 3 小时；unknown 表示未报告
+pretreatment,采血时是否已接受再灌注/抗栓治疗
+sex,F/M/unknown
+age,采血时年龄（岁）；未报告为 NA
+platform,表达谱平台
+batch,批次：系列级为测序/芯片批次；GSE22255 为杂交批次 A-F
+timepoint_label,采样时点标签
+tissue,标本类型
+specimen,标本类别（全血 / PBMC）
+analysis_role,本样本在本研究中的用途
+evidence,每个字段取值的来源与推定说明

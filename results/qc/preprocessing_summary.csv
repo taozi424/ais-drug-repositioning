@@ -1,0 +1,4 @@
+cohort,platform,n_probes_input,n_probes_after_na_filter,n_probes_with_symbol,n_genes,n_genes_multi_probe,already_log2,log2_evidence,range_min,range_max,median,collapse_rule
+GSE16561,GPL6883,24424,24424,24424,18575,3724,TRUE,"GEO Sample_data_processing: RMA in GeneSpring, log base 2 scale; 实测 median=0, max=6.1",-6.24,6.1,0,每基因保留队列内平均表达最高的探针; 并列取 probe_id 字典序最小
+GSE58294,GPL570,54675,54675,45118,21753,11517,TRUE,"GEO Sample_data_processing: Partek 内部归一化, log2 尺度; 实测 median=-2.3, max=7.9",-6.98,7.85,-2.33,每基因保留队列内平均表达最高的探针; 并列取 probe_id 字典序最小
+GSE22255,GPL570,54675,54675,45118,21753,11517,TRUE,"GEO Sample_data_processing: RMA; 实测 median=4.9, max=14.6",2.1,14.63,4.92,每基因保留队列内平均表达最高的探针; 并列取 probe_id 字典序最小

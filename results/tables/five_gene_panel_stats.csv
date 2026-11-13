@@ -1,0 +1,6 @@
+gene,logFC,t,P.Value,FDR,direction,is_landmark,in_signature,note
+PDK4,0.9196,6.2613,3.04963e-08,1.02994e-05,Up,FALSE,FALSE,非landmark(推断或不测)
+SLC22A4,0.664,5.1745,2.23567e-06,0.000157148,Up,FALSE,FALSE,非landmark(推断或不测)
+IRS2,0.7246,4.5341,2.43944e-05,0.000834487,Up,FALSE,FALSE,非landmark(推断或不测)
+CCR7,-0.8966,-4.1974,8.09296e-05,0.00197131,Down,FALSE,FALSE,非landmark(推断或不测)
+ACSL1,0.6206,3.3678,0.00125636,0.014613,Up,FALSE,FALSE,非landmark(推断或不测)

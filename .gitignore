@@ -1,0 +1,77 @@
+# ==============================================================================
+# AIS 药物重定位项目 .gitignore
+#
+# 收录原则：代码、冻结配置、可读的汇总表与图、技术报告进库；
+#           体积大的原始数据与可再生的中间产物不进库（README 给了重建方式）。
+# ==============================================================================
+
+# ---------- 原始数据（约 11 GB；用 scripts/00_fetch_raw_data.sh 重新获取）----------
+data/raw/
+data/parsed/
+data/processed/
+data/pred/
+
+# ---------- 模型权重与训练日志 ----------
+ai/output/*.pkl
+ai/output/*.pt
+ai/output/*.log
+
+# ---------- 体积大或可再生的结果文件 ----------
+# 表达矩阵（由 data/processed/*.rds 导出，可重跑 03）
+results/tables/*_expr_gene.csv.gz
+# v1 版图，已被 results/figures_v2/ 取代
+results/figures/
+
+# ---------- 课程报告与文档流水线中间产物 ----------
+.docpipeline/
+
+# ---------- 工具缓存与系统文件 ----------
+.workbuddy/
+.tmp/
+.DS_Store
+Rplots.pdf
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.Rhistory
+.RData
+
+# ---------- 沙箱遗留的 8 字符标记文件（内容为单个数字，无用途，可安全删除）----------
+ahwox5jp
+w6nyrh5q
+9ebp973q
+qrd24gxb
+pnfgqa9m
+r3zmo95h
+6tsmvn5m
+n_h6cb_i
+x_w0kwan
+ai/4m_47e38
+ai/nffk4dfw
+ai/ufg319qi
+ai/a1ea3f0j
+ai/4n47wss9
+ai/gweyon2_
+ai/0bshlap6
+ai/fblzeust
+ai/rtu6m0ur
+ai/9bja9qfo
+ai/7rawsvvm
+ai/uupvdhf7
+ai/5erre2oo
+ai/at6cs02q
+ai/9n9rupqs
+ai/tuqhtgjp
+ai/0d1didun
+ai/l2r0hkq7
+ai/ojjsu2xd
+ai/lz4lpv66
+ai/DeepCE/6bbb56s4
+
+# ---------- 废弃备份与训练日志 ----------
+*.bak
+ai/*.log
+
+# ---------- 第三方代码：DeepCE（pth1993/DeepCE，未声明开源许可，不再分发）----------
+# 需要时执行： git clone https://github.com/pth1993/DeepCE ai/DeepCE
+ai/DeepCE/

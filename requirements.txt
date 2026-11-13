@@ -1,0 +1,8 @@
+# Python 依赖（AI 扰动预测分支：ai/*.py、scripts/18_featured_targets.py）
+# 版本为项目实际运行环境（2026-11 记录），可用 pip install -r requirements.txt 安装。
+# 注意：仅 R 部分（第 1-6 周、8-11 周的排名/稳定性/外验/出图）不需要这些包。
+numpy==2.5.4
+scipy==1.18.1
+scikit-learn==1.9.1
+torch==2.15.0
+rdkit==2026.9.1

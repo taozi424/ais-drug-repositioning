@@ -1,0 +1,10 @@
+item,value
+pert_info_rows,2170
+trt_cp_rows,1796
+parent_compounds,1760
+compounds_no_inchikey,0
+identity_review_conflicts,31
+compounds_with_qc_sig,1714
+compounds_core_cells_24h_ge1,1714
+dev_compounds,1232
+test_compounds,528

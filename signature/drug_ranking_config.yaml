@@ -1,0 +1,91 @@
+# =====================================================================
+# AIS 药物重定位 - 药物特征与排名规则配置
+# 冻结时间: 2026-11-09 15:20 (在任何药物-AIS 排名计算之前)
+# 冻结依据: GSE70138 元数据探查结果(仅限 pert_type/剂量/时间/细胞计数),
+#           未查看任何表达值、未计算任何与 AIS 签名的相关
+# =====================================================================
+
+# ---------- 数据层级说明 ----------
+data_level:
+  primary: GSE70138_Broad_LINCS_Level5_COMPZ_n118050x12328_2017-03-06.gctx.gz
+  level: "Level 5 共识特征 (COMPZ): 同一 (pert, cell, dose, time) 下重复实验
+          的标准化修饰分数合并, 不是原始表达量, 不是处理-对照差值"
+  gene_space: "12,328 基因 = 978 landmark(直接测量) + 11,350 推断;
+               本分析仅使用 978 landmark 中与发现队列映射的 952 个"
+  gse92742_infeasibility: "GSE92742 Level5 (473,647x12,328) 为 21.3GB gz,
+                           解压后约 25-30GB, 本机可用磁盘 31GB, 不可行;
+                           回退到同一 Broad LINCS 官方发布的 GSE70138
+                           (CMAP02, 仅化学扰动, 2017-03-06 构建)"
+  release_url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE70nnn/GSE70138/suppl/
+
+# ---------- 特征纳入标准 (冻结) ----------
+qc:
+  pert_type: trt_cp                 # 仅小分子化学扰动; 生物制剂不在本数据集出现, 如出现直接排除
+  distil_cc_q75_min: 0.2            # 共识分数质量控制阈值 (Subramanian 2017 惯例)
+  time_primary: "24 h"              # 覆盖 94% 特征; 3h/6h 仅作时间敏感性, 不进主排名
+  dose_primary_um: 10.0             # 标准主剂量; 依据覆盖(17,248 特征)而非任何排名表现
+  dose_fallback_rule: "化合物在 10uM/24h 无合格特征时, 用 24h 内最接近 10uM 的合格剂量,
+                       并在明细表 dose_used 列注明; 不跨时间回退"
+  aggregation: "同一 (compound_parent, cell, dose, time) 有多条共识特征时,
+                取基因级均值后再排序, 聚合条数记 n_sig_merged"
+
+# ---------- 细胞面板 (冻结) ----------
+cells:
+  core_panel: [MCF7, A375, PC3, HT29, HA1E, YAPC, HELA]   # 各约 1.0-1.3 万条特征
+  main_analysis:
+    - "A: 固定条件排名 - 7 个核心细胞各自 24h/10uM 单独发布排名"
+    - "B: 共同面板汇总 - 仅纳入 7 个核心细胞全部有合格特征的化合物,
+        按 7 细胞 R 的中位数汇总, 同时报告 min-max 范围与方向一致比例"
+  exploratory: "跨不同细胞覆盖集合的中位数仅作探索展示, 不作为可直接比较的总排名"
+  cell_biology: "全部为癌细胞系或永生化正常细胞; HA1E 为正常肾上皮,
+                 无任何患者免疫细胞来源的细胞; 一律不得解释为
+                 '患者免疫细胞的响应', 仅表述为 '在 X 细胞模型中的表达反向关联'"
+
+# ---------- 排名指标 (冻结) ----------
+metrics:
+  R_primary:
+    definition: "R = -Spearman(AIS_screen_signature_t, drug_z), 基因为冻结的
+                 185 个筛选签名基因 (上调100 / 下调85)"
+    note: "负相关本身不保证符号逆转, 必须同时报告符号逆转比例"
+  R_sensitivity: "全部 952 个映射 landmark 基因的 t 与 drug_z 的 Spearman, 取负"
+  sign_reversal: "上调组(100)中 drug_z<0 的比例; 下调组(85)中 drug_z>0 的比例"
+  candidate_rule:
+    - "R_primary > 0"
+    - "上调组 drug_z 中位数 < 0"
+    - "下调组 drug_z 中位数 > 0"
+  interpretation: "R 不是官方 tau, 不是疗效概率, 仅为表达方向反向关联强度"
+
+# ---------- 化合物身份与分组 (冻结) ----------
+identity:
+  iname_key: "pert_iname 小写去空格连字符归一为 iname_std"
+  salt_handling: "InChIKey 第一段(骨架)相同视为同一母体化合物 parent_id;
+                  无 InChIKey 的记录进 review 名单, 不参与身份合并"
+  dev_test_split:
+    unit: "母体化合物 (parent_id), 同一化合物所有细胞/剂量/时间特征同组"
+    ratio: "开发 70% / 测试 30%"
+    seed: 20261109
+    frozen_before_ranking: true
+  seal: "测试化合物排名在第 4 周不计算不输出, 到 AI 最终评估时解封"
+
+# ---------- 对照与核查 (冻结) ----------
+controls:
+  random_signature_null:
+    n: 1000
+    construction: "从 952 个映射 landmark 中按与签名基因匹配的表达均值与变异
+                   (分位数分箱)有放回抽取, 每次含 100 上调型 + 85 下调型 t 值"
+    use: "给出各固定条件下 R 的 null 分位; R 超过 null 95% 分位视为
+          超出一般扰动噪声, 不解释为临床疗效检验"
+  cytotoxicity_stress_check:
+    consensus_stress: "全部合格 trt_cp 特征 z 的基因级均值向量 = 普遍扰动方向;
+                       每条特征计算与它的 Spearman (r_consensus)"
+    flags:
+      - "r_consensus > 0.5 : 高普遍应激驱动"
+      - "基因级 |z| 中位数 > 3 : 强效应(高暴露/毒性)嫌疑"
+      - "剂量为 20uM 时标注 high_exposure"
+  exposure_context: "临床可达暴露/毒性/给药背景仅作候选解释字段, 不用于推荐用药"
+
+# ---------- 药物开发状态注释 ----------
+status:
+  source: "ChEMBL WebResource (max_phase>=1 分子列表)"
+  fields: [max_phase, chirality, first_approval 年份若可得]
+  record: "来源 ChEMBL + 检索日期 2026-11-09; 研究化合物另列"

@@ -1,0 +1,5 @@
+timepoint,n_compounds,rho_rank,sign_concordance,top20_overlap,candidate_median_percentile,candidate_top_quartile_pct
+R_le3h,756,-0.039,0.373,0,0.463,32.1
+R_t5h,756,0.374,0.532,2,0.247,50
+R_t24h,756,0.078,0.433,2,0.377,35.7
+R_tc_24h_minus_5h,756,-0.704,0.212,0,0.682,8.9

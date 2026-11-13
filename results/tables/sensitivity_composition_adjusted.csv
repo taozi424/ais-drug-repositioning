@@ -1,0 +1,2 @@
+variant,n_genes,n_up,n_dn,gene_overlap_with_primary,rho_vs_base,top20_overlap,n_candidate_adj,candidates_surviving
+composition_adjusted,161,100,61,13,0.209329482574716,1,573,85

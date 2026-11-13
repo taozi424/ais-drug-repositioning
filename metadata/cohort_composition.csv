@@ -1,0 +1,4 @@
+cohort,n_samples,n_subjects,n_AIS,n_ctrl,specimen,roles
+GSE16561,63,63,39,24,whole blood,discovery
+GSE22255,40,40,20,20,PBMC,chronic_supplementary
+GSE58294,92,46,69,23,whole blood,external_replication_primary; sensitivity_repeat_measure

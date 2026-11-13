@@ -1,0 +1,66 @@
+# AIS 疾病签名规则配置（冻结）
+# 冻结时点：2026-11-09T13:05+08:00，早于任何药物排名计算。
+# 任何修改都必须新建版本文件并记录变更理由，不得原地覆盖。
+
+project: AIS-drug-repositioning
+stage: 02_disease_signature
+frozen_at: "2026-11-09T13:05:00+08:00"
+frozen_by: "analysis-pipeline"
+
+# ---------------- 发现队列 ----------------
+discovery:
+  cohort: GSE16561
+  specimen: whole blood
+  platform: GPL6883
+  annotation: "GPL6883 (Illumina HumanRef-8 v3) 平台注释, GEO 随系列提供 (GPL6883-11606.txt)"
+  annotation_date: "2008-06-06 (GEO 平台记录)"
+  n_samples: 63
+  n_case: 39            # AIS
+  n_control: 24         # 非卒中对照
+  expression_state: "已按基因基线变换的 log2 比值（GEO 分发矩阵），不得再次 log2"
+
+# ---------------- 统计模型 ----------------
+model:
+  contrast: "AIS - Control"        # logFC > 0 表示 AIS 中上调
+  method: "limma::lmFit + eBayes(trend = TRUE)"
+  multiple_testing: BH
+  formula: "~ group + age + sex"   # 主模型
+  covariates:
+    age: "可得且可估计（AIS 73.1±14.0 vs 对照 59.9±9.7，p<1e-4，强混杂，必须校正）"
+    sex: "可得且可估计（AIS 17M/22F vs 对照 10M/14F，p=1.0，平衡）"
+    batch: "不可得：GSE16561 为单一系列单平台，GEO 未提供芯片/批次字段，无法校正（记为限制，不假设软件能消除）"
+  estimability_check: "设计矩阵秩 = 列数；协变量与分组无完全共线"
+  unadjusted_sensitivity: "~ group"   # 敏感性分析：不校正年龄/性别
+
+# ---------------- 药物基因空间 ----------------
+drug_gene_space:
+  source: "L1000 (LINCS), 平台 GPL20573 (Broad Institute Human L1000 epsilon)"
+  n_landmark_measured: 978          # 直接测量的 landmark 基因
+  inferred_genes: "L1000 其余基因（约 1.1 万）为推断值（inference），与本签名的直接测量证据分开对待，不进入主筛选"
+  common_space_rule: "signature 仅在 发现队列 ∩ 978 landmark 基因 内构建"
+  alias_resolution: "landmark 符号先经 org.Hs.eg.db 别名映射回发现队列符号"
+
+# ---------------- 主筛选规则（锁定） ----------------
+signature_rule:
+  fdr_max: 0.05
+  rank_by: "abs(t)"                 # 带方向 t 统计量
+  max_per_direction: 100
+  min_per_direction: 10
+  direction_split: true             # 上调/下调分别取
+  if_below_min: "标记为信息不足（insufficient），不放宽 FDR 或倍数阈值凑数"
+  if_below_max: "如实记录实际入选数量"
+  five_gene_panel: "单独展示，不并入筛选签名"
+
+# ---------------- 敏感性分析（预设） ----------------
+sensitivity:
+  max_per_direction: [50, 150]
+  rank_by_variants: [t, logFC]
+  model_variants: ["~ group"]
+  full_common_space: true           # 共同基因空间内全部基因的排序作为对照
+  report_overlap: "各变体与主签名的基因重叠数（Jaccard）"
+
+# ---------------- 下游使用约束 ----------------
+downstream:
+  locked_before_drug_ranking: true
+  external_validation: "GSE58294 <=3h 仅用于方向一致性检验，不重训、不重调阈值"
+  cell_composition: "若签名主要反映白细胞比例差异，需加组成调整敏感性分析，结论限定为外周血关联"
